@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3e502043-7b9e-4480-9df1-6f10a9e62632" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/m6summative/src/main/java/com/dependencyinjection/m6summative/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/m6summative/src/main/java/com/dependencyinjection/m6summative/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m6summative/src/main/java/com/dependencyinjection/m6summative/controller/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/m6summative/src/main/java/com/dependencyinjection/m6summative/controller/ItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m6summative/src/main/java/com/dependencyinjection/m6summative/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/m6summative/src/main/java/com/dependencyinjection/m6summative/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m6summative/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/m6summative/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,23 +11,37 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/m6summative/src/main/java/com/dependencyinjection/m6summative/controller/ControllerExceptionHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-133" />
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/m6summative/src/main/java/com/dependencyinjection/m6summative/controller/CustomerController.java">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/m6summative/src/main/java/com/dependencyinjection/m6summative/controller/CustomerController.java">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/m6summative/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="134">
+              <caret line="32" column="21" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/m6summative/pom.xml" />
+      </list>
+    </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="163" />
@@ -121,8 +133,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -157,7 +169,7 @@
     <frame x="0" y="22" width="1440" height="798" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29399142" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2653791" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -186,12 +198,17 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/m6summative/src/main/java/com/dependencyinjection/m6summative/controller/ControllerExceptionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-133" />
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/m6summative/src/main/java/com/dependencyinjection/m6summative/controller/CustomerController.java">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m6summative/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="32" column="21" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
