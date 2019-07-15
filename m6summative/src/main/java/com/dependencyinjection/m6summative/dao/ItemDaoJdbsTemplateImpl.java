@@ -20,18 +20,16 @@ public class ItemDaoJdbsTemplateImpl implements ItemDao {
             "insert into item (name, description, daily_rate) values (?, ?, ?)";
 
     private static final String SELECT_ITEM_SQL =
-            "select * from item where item = ?";
+            "select * from item where item_id = ?";
 
     private static final String SELECT_ALL_ITEM_SQL =
             "select * from item";
 
     private static final String DELETE_ITEM_SQL =
-            "delete from item where item = ?";
+            "delete from item where item_id = ?";
 
     private static final String UPDATE_ITEM_SQL =
-            "update item set name = ?, description, daily_rate = ?, where item = ?";
-
-
+            "update item set name = ?, description = ?, daily_rate = ? where item_id = ?";
 
     private JdbcTemplate jdbcTemplate;
 

@@ -28,7 +28,7 @@ public class CustomerDaoJdbsTemplateImpl implements CustomerDao {
             "delete from customer where customer_id = ?";
 
     private static final String UPDATE_CUSTOMER_SQL =
-            "update customer set first_name = ?, last_name = ?, email = ?, company = ?, phone = ?, where customer_id = ?";
+            "update customer set first_name = ?, last_name = ?, email = ?, company = ?, phone = ? where customer_id = ?";
 
 
     private JdbcTemplate jdbcTemplate;
