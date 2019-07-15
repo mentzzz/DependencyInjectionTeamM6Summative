@@ -36,16 +36,18 @@ public class ServiceLayerTest {
 
     @Before
     public void setUp() throws Exception {
-
         setUpCustomerMock();
         setUpInvoiceMock();
         setUpInvoiceItemMock();
         setUpItemMock();
 
+        service = new ServiceLayer(customerDao, invoiceDao, invoiceItemDao, itemDao);
+
     }
 
-    // ServiceLayer Tests
 
+    // ServiceLayer Tests
+@Test
     public void saveOrder() throws Exception {
 //               // create a few date variables
 //        java.util.Date orderDate = sdf.parse("2019-07-26");
