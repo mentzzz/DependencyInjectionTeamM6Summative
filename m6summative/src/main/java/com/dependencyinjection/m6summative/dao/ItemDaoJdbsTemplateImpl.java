@@ -29,7 +29,7 @@ public class ItemDaoJdbsTemplateImpl implements ItemDao {
             "delete from item where item = ?";
 
     private static final String UPDATE_ITEM_SQL =
-            "update item set name = ?, description, daily_rate = ?, where item = ?";
+            "update item set name = ?, description =?, daily_rate = ? where item = ?";
 
 
 
