@@ -37,7 +37,7 @@ public class ServiceLayer {
     }
 
     //
-    // invoice API
+    // order API
     //
 
     @Transactional
@@ -145,8 +145,6 @@ public class ServiceLayer {
         tempCompleteInvoiceObject.add(completeInvoice);
 
         tivm.setInvoices(tempCompleteInvoiceObject);
-
-    //    tivm.setInvoices((List<CompleteInvoice>) completeInvoice);
 
         return tivm;
     }
@@ -288,124 +286,5 @@ public class ServiceLayer {
         invoiceItemDao.deleteInvoiceItem(id);
     }
 
-
-
-
-//    // Helper Methods
-//    private TotalInvoiceViewModel buildTotalInvoiceViewModel(Invoice invoice) {
-//
-//        // get the associated invoice
-////        Invoice invoiceIvm = invoiceDao.getInvoice(invoice.getInvoiceId());
-//        Invoice invoiceIvm = invoiceDao.getInvoice(invoice.getInvoiceId());
-//
-//        // get the associated customer
-//        Customer customerIvm = customerDao.getCustomer(invoiceIvm.getCustomerId());
-//
-//        //
-//        //  create list for items
-//
-//        // list of invoice_items
-//        List<InvoiceItem> itemList = invoiceItemDao.getInvoiceItemByInvoice(invoice.getInvoiceId());
-//
-//        // create the empty Invoicewithitem array to populate in the for each loop
-//        List<InvoiceWithItem> invoiceItemList = new ArrayList<>();
-//
-//        // loop the list and for each get and populate the item info
-//
-//
-//        for ( InvoiceItem eachInvoice: itemList ) {
-//            InvoiceWithItem tempItem = new InvoiceWithItem();
-//
-//            // set the invoice_item data to the InvoiceWithItem object
-//            tempItem.setInvoiceItemId(eachInvoice.getInvoiceItemId());
-//            tempItem.setQuantity(eachInvoice.getQuantity());
-//            tempItem.setUnitRate(eachInvoice.getUnitRate());
-//            tempItem.setDiscount(eachInvoice.getDiscount());
-//
-//            // get the specific item from the invoice_item object using item_id
-//            Item item = itemDao.getItem(eachInvoice.getItemId());
-//            // set the item data to the InvoiceWithItem object
-//            tempItem.setName(item.getName());
-//            tempItem.setDescription(item.getDescription());
-//            tempItem.setDailyRate(item.getDailyRate());
-//            // add each tempItem to the invocieItemList Array
-//            invoiceItemList.add(tempItem);
-//
-//        }
-//        // put the info from above into the final TotalInvoiceViewModel object
-//        TotalInvoiceViewModel tivm = new TotalInvoiceViewModel();
-//        tivm.setInvoiceId(invoiceIvm.getInvoiceId());
-//        tivm.setOrderDate(invoiceIvm.getOrderDate());
-//        tivm.setPickupDate(invoiceIvm.getPickupDate());
-//        tivm.setReturnDate(invoiceIvm.getReturnDate());
-//        tivm.setLateFee(invoiceIvm.getLateFee());
-//        tivm.setCustomer(customerIvm);
-//
-//        tivm.setInvoiceItems(invoiceItemList);
-//
-//
-//        return tivm;
-//
-//    }
-
-
-
-
-//    // Helper Methods
-//    private TotalInvoiceViewModel buildTotalInvoiceViewModel(Invoice invoice) {
-//
-//        // get the associated invoice
-////        Invoice invoiceIvm = invoiceDao.getInvoice(invoice.getInvoiceId());
-//        Invoice invoiceIvm = invoiceDao.getInvoice(invoice.getInvoiceId());
-//
-//        // get the associated customer
-//        Customer customerIvm = customerDao.getCustomer(invoiceIvm.getCustomerId());
-//
-//        //
-//        //  create list for items
-//
-//        // list of invoice_items
-//        List<InvoiceItem> itemList = invoiceItemDao.getInvoiceItemByInvoice(invoice.getInvoiceId());
-//
-//        // create the empty Invoicewithitem array to populate in the for each loop
-//        List<InvoiceWithItem> invoiceItemList = new ArrayList<>();
-//
-//        // loop the list and for each get and populate the item info
-//
-//
-//        for ( InvoiceItem eachInvoice: itemList ) {
-//            InvoiceWithItem tempItem = new InvoiceWithItem();
-//
-//            // set the invoice_item data to the InvoiceWithItem object
-//            tempItem.setInvoiceItemId(eachInvoice.getInvoiceItemId());
-//            tempItem.setQuantity(eachInvoice.getQuantity());
-//            tempItem.setUnitRate(eachInvoice.getUnitRate());
-//            tempItem.setDiscount(eachInvoice.getDiscount());
-//
-//            // get the specific item from the invoice_item object using item_id
-//            Item item = itemDao.getItem(eachInvoice.getItemId());
-//            // set the item data to the InvoiceWithItem object
-//            tempItem.setName(item.getName());
-//            tempItem.setDescription(item.getDescription());
-//            tempItem.setDailyRate(item.getDailyRate());
-//            // add each tempItem to the invocieItemList Array
-//            invoiceItemList.add(tempItem);
-//
-//        }
-//        // put the info from above into the final TotalInvoiceViewModel object
-//        TotalInvoiceViewModel tivm = new TotalInvoiceViewModel();
-//        tivm.setInvoiceId(invoiceIvm.getInvoiceId());
-//        tivm.setOrderDate(invoiceIvm.getOrderDate());
-//        tivm.setPickupDate(invoiceIvm.getPickupDate());
-//        tivm.setReturnDate(invoiceIvm.getReturnDate());
-//        tivm.setLateFee(invoiceIvm.getLateFee());
-//        tivm.setCustomer(customerIvm);
-//
-//        tivm.setInvoiceItems(invoiceItemList);
-//
-//
-//        return tivm;
-//
-//    }
 
     }

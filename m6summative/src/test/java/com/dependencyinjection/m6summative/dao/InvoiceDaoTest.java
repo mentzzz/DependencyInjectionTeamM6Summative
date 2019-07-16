@@ -16,8 +16,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
+
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
@@ -64,17 +65,6 @@ public class InvoiceDaoTest {
 
     }
 
-//    @Test
-//    public void testme() {
-//        List<Customer> cList = customerDao.getAllCustomers();
-//
-//        cList.stream()
-//                .forEach(customer -> customerDao.deleteCustomer(customer.getCustomerId()));
-//
-//
-//
-//    }
-
 
     @Test
     public void addGetDeleteInvoice() throws Exception {
@@ -113,19 +103,6 @@ public class InvoiceDaoTest {
         Invoice fromServiceInvoice = invoiceDao.getInvoice(invoice.getInvoiceId());
 
         Assert.assertEquals(invoice, fromServiceInvoice);
-
-
-
-//
-//        // create a new invoice object using the previous customerId
-//        Invoice fromTheDatabase = new Invoice();
-//        fromTheDatabase = invoiceDao.getInvoice(invoice.getInvoiceId());
-//
-//        // compare the two customer objects
-//        Assert.assertEquals(invoice, fromTheDatabase);
-//
-//        // Maybe the customer id is not equal, need to use debugger
-
 
     }
 

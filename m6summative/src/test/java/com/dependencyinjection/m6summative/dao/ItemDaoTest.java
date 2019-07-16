@@ -24,9 +24,11 @@ public class ItemDaoTest {
     @Autowired
     protected CustomerDao customerDao;
 
-    @Autowired InvoiceDao invoiceDao;
+    @Autowired
+    InvoiceDao invoiceDao;
 
-    @Autowired InvoiceItemDao invoiceItemDao;
+    @Autowired
+    InvoiceItemDao invoiceItemDao;
 
     @Autowired
     protected ItemDao itemDao;
@@ -128,7 +130,6 @@ public class ItemDaoTest {
 
 
     }
-
 
 
 }

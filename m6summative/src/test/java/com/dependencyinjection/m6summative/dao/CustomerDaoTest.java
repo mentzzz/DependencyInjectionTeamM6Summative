@@ -16,7 +16,6 @@ import java.util.List;
 public class CustomerDaoTest {
 
 
-
     @Autowired
     protected CustomerDao customerDao;
 
@@ -60,8 +59,6 @@ public class CustomerDaoTest {
 
         // compare the two customer objects
         Assert.assertEquals(customer, fromDatabase);
-
-
 
 
     }
