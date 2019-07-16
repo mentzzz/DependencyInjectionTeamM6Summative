@@ -108,6 +108,7 @@ public class InvoiceDaoJdbsTemplaceImpl implements InvoiceDao{
     // Helper methods
     private Invoice mapRowToInvoice(ResultSet rs, int rowNum) throws SQLException {
         Invoice invoice = new Invoice();
+        invoice.setInvoiceId(rs.getInt("invoice_id"));
         invoice.setCustomerId(rs.getInt("customer_id"));
         invoice.setOrderDate(rs.getDate("order_date"));
         invoice.setPickupDate(rs.getDate("pickup_date"));
