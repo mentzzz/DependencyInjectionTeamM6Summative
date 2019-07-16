@@ -75,7 +75,7 @@ public class InvoiceDaoJdbsTemplaceImpl implements InvoiceDao{
 
         int id = jdbcTemplate.queryForObject("select last_insert_id()", Integer.class);
 
-        invoice.setCustomerId(id);
+        invoice.setInvoiceId(id);
 
         return invoice;
     }

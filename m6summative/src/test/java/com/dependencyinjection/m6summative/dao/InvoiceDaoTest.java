@@ -10,6 +10,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.text.SimpleDateFormat;
@@ -77,17 +78,6 @@ public class InvoiceDaoTest {
         // create a SimpleDateFormat object to use
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-//        // delete all Invoices from db
-//        List<Invoice> cList = invoiceDao.getAllInvoices();
-//
-//        cList.stream()
-//                .forEach(inv -> invoiceDao.deleteInvoice(inv.getInvoiceId()));
-//
-//        List<Invoice> listFromDatabase = invoiceDao.getAllInvoices();
-//        // check to see if the length of the list is 0
-//        Assert.assertEquals(0, listFromDatabase.size());
-
-
         // define customer object
         Customer customer = new Customer();
         customer.setFirstName("brian");
@@ -106,7 +96,6 @@ public class InvoiceDaoTest {
 
         // define Invoice object
         Invoice invoice = new Invoice();
-        invoice.setInvoiceId(1);
         invoice.setCustomerId(customer.getCustomerId());
         invoice.setOrderDate(orderDate);
         invoice.setPickupDate(pickUpDate);
@@ -115,15 +104,24 @@ public class InvoiceDaoTest {
         // add customer to db
         invoice = invoiceDao.addInvoice(invoice);
 
-        // create a new invoice object using the previous customerId
-        Invoice fromTheDatabase = new Invoice();
-        fromTheDatabase = invoiceDao.getInvoice(invoice.getInvoiceId());
+        Invoice temp = invoice;
 
-        // compare the two customer objects
-        Assert.assertEquals(invoice, fromTheDatabase);
 
-        // Maybe the customer id is not equal, need to use debugger
+        Invoice fromServiceInvoice = invoiceDao.getInvoice(invoice.getInvoiceId());
 
+        Assert.assertEquals(invoice, fromServiceInvoice);
+
+
+
+//
+//        // create a new invoice object using the previous customerId
+//        Invoice fromTheDatabase = new Invoice();
+//        fromTheDatabase = invoiceDao.getInvoice(invoice.getInvoiceId());
+//
+//        // compare the two customer objects
+//        Assert.assertEquals(invoice, fromTheDatabase);
+//
+//        // Maybe the customer id is not equal, need to use debugger
 
 
     }
