@@ -19,7 +19,7 @@ public class InvoiceItemDaoJdbsTemplateImpl implements InvoiceItemDao {
             "insert into invoice_item (invoice_id, item_id, quantity, unit_rate, discount) values (?, ?, ?, ?, ?)";
 
     private static final String SELECT_INVOICE_ITEM_SQL =
-            "select * from invoice_item where invoice_id = ?";
+            "select * from invoice_item where invoice_item_id = ?";
 
     private static final String SELECT_ALL_INVOICE_ITEM_SQL =
             "select * from invoice_item";

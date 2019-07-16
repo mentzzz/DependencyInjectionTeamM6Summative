@@ -100,7 +100,7 @@ public class InvoiceItemDaoTest {
         item = itemDao.addItem(item);
 
         InvoiceItem invoiceItem = new InvoiceItem();
-        invoiceItem.setDiscount(4);
+        invoiceItem.setDiscount(3.5);
         invoiceItem.setQuantity(10);
         invoiceItem.setUnitRate(25);
         invoiceItem.setInvoiceId(invoice.getInvoiceId());
