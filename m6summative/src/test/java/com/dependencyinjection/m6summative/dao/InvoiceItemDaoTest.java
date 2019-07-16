@@ -100,7 +100,7 @@ public class InvoiceItemDaoTest {
         item = itemDao.addItem(item);
 
         InvoiceItem invoiceItem = new InvoiceItem();
-        invoiceItem.setDiscount(3.5);
+        invoiceItem.setDiscount(4);
         invoiceItem.setQuantity(10);
         invoiceItem.setUnitRate(25);
         invoiceItem.setInvoiceId(invoice.getInvoiceId());
@@ -120,8 +120,6 @@ public class InvoiceItemDaoTest {
         invoiceItem1 = invoiceItemDao.getInvoiceItem(invoiceItem.getInvoiceItemId());
 
         assertNull(invoiceItem1);
-
-
     }
 
 }
