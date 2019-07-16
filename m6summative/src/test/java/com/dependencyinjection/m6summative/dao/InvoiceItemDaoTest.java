@@ -108,26 +108,70 @@ public class InvoiceItemDaoTest {
 
         invoiceItem = invoiceItemDao.addInvoiceItem(invoiceItem);
 
-//        invoiceItem.setQuantity(5);
-//
-//        invoiceItemDao.updateInvoiceItem(invoiceItem);
+        invoiceItem.setQuantity(5);
 
-        InvoiceItem invoiceItemFromService = invoiceItemDao.getInvoiceItem(invoiceItem.getInvoiceItemId());
+        invoiceItemDao.updateInvoiceItem(invoiceItem);
 
-        InvoiceItem temp = invoiceItemFromService;
+        InvoiceItem invoiceItem1 = invoiceItemDao.getInvoiceItem(invoiceItem.getInvoiceItemId());
+        assertEquals(invoiceItem1, invoiceItem);
 
-//        Item newOne = new Item();
-//        newOne.setName("brian");
+        invoiceItemDao.deleteInvoiceItem(invoiceItem.getInvoiceItemId());
 
-        assertEquals(invoiceItem, invoiceItemFromService);
+        invoiceItem1 = invoiceItemDao.getInvoiceItem(invoiceItem.getInvoiceItemId());
 
-//        invoiceItemDao.deleteInvoiceItem(invoiceItem.getInvoiceItemId());
-//
-//        invoiceItem1 = invoiceItemDao.getInvoiceItem(invoiceItem.getInvoiceItemId());
-//
-//        assertNull(invoiceItem1);
+        assertNull(invoiceItem1);
+    }
 
+    @Test
+    public void updateInvoiceItem() throws ParseException{
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
+        Customer customer = new Customer();
+        customer.setFirstName("John");
+        customer.setLastName("Smith");
+        customer.setEmail("brian@mail");
+        customer.setCompany("ezShop");
+        customer.setPhone("7048887777");
+        // add customer to db
+        customer = customerDao.addCustomer(customer);
+
+        // define some dates to use
+        java.util.Date orderDate = sdf.parse("2019-07-26");
+        java.util.Date pickUpDate = sdf.parse("2019-07-27");
+        java.util.Date returnDate = sdf.parse("2019-07-28");
+
+        // define Invoice object
+        Invoice invoice = new Invoice();
+        invoice.setCustomerId(customer.getCustomerId());
+        invoice.setOrderDate(orderDate);
+        invoice.setPickupDate(pickUpDate);
+        invoice.setReturnDate(returnDate);
+        invoice.setLateFee(2.00);
+        // add invoice to db
+        invoice = invoiceDao.addInvoice(invoice);
+
+        Item item = new Item();
+        item.setName("The Best Item");
+        item.setDescription("The best");
+        item.setDailyRate(22.5);
+        item = itemDao.addItem(item);
+
+        InvoiceItem invoiceItem = new InvoiceItem();
+        invoiceItem.setDiscount(4);
+        invoiceItem.setQuantity(10);
+        invoiceItem.setUnitRate(25);
+        invoiceItem.setInvoiceId(invoice.getInvoiceId());
+        invoiceItem.setItemId(item.getItemId());
+
+        invoiceItem = invoiceItemDao.addInvoiceItem(invoiceItem);
+
+        invoiceItem.setQuantity(5);
+
+        invoiceItemDao.updateInvoiceItem(invoiceItem);
+
+        InvoiceItem invoiceItem1 = invoiceItemDao.getInvoiceItem(invoiceItem.getInvoiceItemId());
+
+        assertEquals(invoiceItem1, invoiceItem);
     }
 
 }
