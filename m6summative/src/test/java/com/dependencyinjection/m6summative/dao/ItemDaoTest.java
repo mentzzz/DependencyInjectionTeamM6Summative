@@ -34,20 +34,26 @@ public class ItemDaoTest {
     @Before
     public void setUp() throws Exception {
         // clean out the test db
-//        List<Coffee> cList = CoffeeDao.getAllCoffees();
-//
-//        cList.stream()
-//                .forEach(coffee -> CoffeeDao.deleteCoffee(coffee.getCoffee_id()));
-//
-//        List<Roaster> rList = RoasterDao.getAllRoasters();
-//
-//        rList.stream()
-//                .forEach(roaster -> RoasterDao.deleteRoaster(roaster.getRoaster_id()));
 
+        List<InvoiceItem> invoiceItemList = invoiceItemDao.getAllInvoiceItems();
 
-        List<Item> iList = itemDao.getAllItems();
+        invoiceItemList.stream()
+                .forEach(invoiceItem -> invoiceItemDao.deleteInvoiceItem(invoiceItem.getInvoiceItemId()));
 
-        iList.stream()
+        List<Invoice> invoiceList = invoiceDao.getAllInvoices();
+
+        invoiceList.stream()
+                .forEach(invoice -> invoiceDao.deleteInvoice(invoice.getInvoiceId()));
+
+        // delete all Customers from db
+        List<Customer> cList = customerDao.getAllCustomers();
+
+        cList.stream()
+                .forEach(customer -> customerDao.deleteCustomer(customer.getCustomerId()));
+
+        List<Item> itemsList = itemDao.getAllItems();
+
+        itemsList.stream()
                 .forEach(item -> itemDao.deleteItem(item.getItemId()));
 
     }
@@ -55,16 +61,6 @@ public class ItemDaoTest {
 
     @Test
     public void addGetDeleteItem() {
-        // delete all Customers from db
-        List<Item> cList = itemDao.getAllItems();
-
-        cList.stream()
-                .forEach(item -> itemDao.deleteItem(item.getItemId()));
-
-        List<Item> listFromDatabase = itemDao.getAllItems();
-        // check to see if the length of the list is 0
-        Assert.assertEquals(0, listFromDatabase.size());
-
 
         // define customer object
         Item item = new Item();
@@ -92,15 +88,6 @@ public class ItemDaoTest {
 
     @Test
     public void updateItem() {
-
-        List<Item> cList = itemDao.getAllItems();
-
-        cList.stream()
-                .forEach(item -> itemDao.deleteItem(item.getItemId()));
-
-        List<Item> listFromDatabase = itemDao.getAllItems();
-        // check to see if the length of the list is 0
-        Assert.assertEquals(0, listFromDatabase.size());
 
         // define customer object
         Item item = new Item();
