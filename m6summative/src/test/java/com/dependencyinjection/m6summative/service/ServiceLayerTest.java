@@ -124,8 +124,13 @@ public class ServiceLayerTest {
         List<InvoiceItem> invoiceItemList = new ArrayList<>();
         invoiceItemList.add(invoiceItem);
 
+<<<<<<< HEAD
+        ri.setItems(invoiceItemList);
+        ri.setInvoice((Invoice) invoiceItemList);
+=======
         ri.setInvoice(invoice);
         ri.setItems(invoiceItemList);
+>>>>>>> 2388e21a94fede0db47ef97d352a2b21230297c7
         // ----- RequestInvoice object is created above
 
         // use the save method from serviceLayer
@@ -272,24 +277,6 @@ public class ServiceLayerTest {
 //
 //    }
 
-    @Test
-    public void saveUpdateFindCustomer() {
-
-        Customer customer = new Customer();
-        customer.setFirstName("brian");
-        customer.setLastName("smith");
-        customer.setEmail("brian@mail");
-        customer.setCompany("ezShop");
-        customer.setPhone("7048887777");
-
-        customer = service.saveCustomer(customer);
-
-        // update
-        customer.setFirstName("jordan");
-
-        //       Customer updatedCustomer = service.updateCustomer(customer);
-    }
-
 
 //    @Test
 //    public void saveFindFindAllItem() {
@@ -357,9 +344,12 @@ public class ServiceLayerTest {
         doReturn(customer).when(customerDao).addCustomer(updatedCustomer);
         doReturn(customer).when(customerDao).getCustomer(1);
         doReturn(cList).when(customerDao).getAllCustomers();
+<<<<<<< HEAD
+=======
 //        doNothing().when(customerDao).updateCustomer(Mockito.any(Customer.class));
 //        // add a delete here
 //        doNothing().when(customerDao).deleteCustomer(1);
+>>>>>>> 2388e21a94fede0db47ef97d352a2b21230297c7
     }
 
     private void setUpInvoiceMock() throws ParseException {
@@ -443,8 +433,11 @@ public class ServiceLayerTest {
         doReturn(item).when(itemDao).addItem(item2);
         doReturn(item).when(itemDao).getItem(1);
         doReturn(itemList).when(itemDao).getAllItems();
+<<<<<<< HEAD
+=======
 //        doNothing().when(itemDao).updateItem(updatedItem);
 //        doNothing().when(itemDao).deleteItem(Mockito.any());
+>>>>>>> 2388e21a94fede0db47ef97d352a2b21230297c7
     }
 
 

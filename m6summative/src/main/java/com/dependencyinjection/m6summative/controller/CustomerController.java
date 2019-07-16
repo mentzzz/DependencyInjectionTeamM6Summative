@@ -15,6 +15,7 @@ public class CustomerController {
     @Autowired
     private ServiceLayer service;
 
+    //when using postman for the JSON format, use camelcase instead of underscores for the properties
     @RequestMapping(value="/customer", method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.CREATED)
     public Customer createCustomer(@RequestBody Customer customer) {
