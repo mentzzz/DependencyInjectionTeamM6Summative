@@ -75,7 +75,7 @@ public class InvoiceDaoJdbsTemplaceImpl implements InvoiceDao{
 
         int id = jdbcTemplate.queryForObject("select last_insert_id()", Integer.class);
 
-        invoice.setCustomerId(id);
+        invoice.setInvoiceId(id);
 
         return invoice;
     }
@@ -108,6 +108,7 @@ public class InvoiceDaoJdbsTemplaceImpl implements InvoiceDao{
     // Helper methods
     private Invoice mapRowToInvoice(ResultSet rs, int rowNum) throws SQLException {
         Invoice invoice = new Invoice();
+        invoice.setInvoiceId(rs.getInt("invoice_id"));
         invoice.setCustomerId(rs.getInt("customer_id"));
         invoice.setOrderDate(rs.getDate("order_date"));
         invoice.setPickupDate(rs.getDate("pickup_date"));
