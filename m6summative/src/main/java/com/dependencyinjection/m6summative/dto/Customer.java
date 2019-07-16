@@ -1,14 +1,21 @@
 package com.dependencyinjection.m6summative.dto;
 
+import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 public class Customer {
 
+    @NotNull
     private int customerId;
+    @NotNull
     private String firstName;
+    @NotNull
     private String lastName;
+    @NotNull
     private String email;
+    @NotNull
     private String company;
+    @NotNull
     private String phone;
 
     public int getCustomerId() {
