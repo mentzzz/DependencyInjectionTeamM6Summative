@@ -1,14 +1,21 @@
 package com.dependencyinjection.m6summative.dto;
 
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.Objects;
 
 public class Invoice {
+    @NotNull
     private int invoiceId;
+    @NotNull
     private int customerId;
+    @NotNull
     private Date orderDate;
+    @NotNull
     private Date pickupDate;
+    @NotNull
     private Date returnDate;
+    @NotNull
     private double lateFee;
 
     public int getInvoiceId() {

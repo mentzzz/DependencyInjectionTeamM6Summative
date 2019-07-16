@@ -76,6 +76,7 @@ public class ServiceLayerTest {
         List<InvoiceItem> invoiceItemList = new ArrayList<>();
         invoiceItemList.add(invoiceItem);
 
+
         ri.setInvoice(invoice);
         ri.setItems(invoiceItemList);
         // ----- RequestInvoice object is created above
@@ -156,6 +157,7 @@ public class ServiceLayerTest {
     }
 
 
+<<<<<<< HEAD
     @Test
     public void saveFindFindAllCustomer() {
 
@@ -176,6 +178,8 @@ public class ServiceLayerTest {
 
     }
 
+=======
+>>>>>>> 1c3e9ce45ec9ca38f0615c978535a7548d78796e
 
     @Test
     public void saveFindFindAllItem() {
@@ -243,7 +247,10 @@ public class ServiceLayerTest {
         doReturn(customer).when(customerDao).addCustomer(updatedCustomer);
         doReturn(customer).when(customerDao).getCustomer(1);
         doReturn(cList).when(customerDao).getAllCustomers();
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1c3e9ce45ec9ca38f0615c978535a7548d78796e
     }
 
     private void setUpInvoiceMock() throws ParseException {
@@ -331,6 +338,10 @@ public class ServiceLayerTest {
         doReturn(item).when(itemDao).addItem(item2);
         doReturn(item).when(itemDao).getItem(1);
         doReturn(itemList).when(itemDao).getAllItems();
+<<<<<<< HEAD
+=======
+    }
+>>>>>>> 1c3e9ce45ec9ca38f0615c978535a7548d78796e
 
     }
 
