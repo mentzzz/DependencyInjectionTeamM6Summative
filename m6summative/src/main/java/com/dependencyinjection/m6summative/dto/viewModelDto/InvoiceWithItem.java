@@ -3,7 +3,7 @@ package com.dependencyinjection.m6summative.dto.viewModelDto;
 
 import java.util.Objects;
 
-public class InvoiceWithItem  {
+public class InvoiceWithItem {
 
 
     private int invoiceItemId;
@@ -16,7 +16,6 @@ public class InvoiceWithItem  {
     private double dailyRate;
 
 
-
     // getters / setters
 
     public int getInvoiceItemId() {
@@ -26,14 +25,6 @@ public class InvoiceWithItem  {
     public void setInvoiceItemId(int invoiceItemId) {
         this.invoiceItemId = invoiceItemId;
     }
-
-//    public int getInvoiceId() {
-//        return invoiceId;
-//    }
-//
-//    public void setInvoiceId(int invoiceId) {
-//        this.invoiceId = invoiceId;
-//    }
 
     public int getQuantity() {
         return quantity;
@@ -58,14 +49,6 @@ public class InvoiceWithItem  {
     public void setDiscount(double discount) {
         this.discount = discount;
     }
-
-//    public int getItemId() {
-//        return itemId;
-//    }
-//
-//    public void setItemId(int itemId) {
-//        this.itemId = itemId;
-//    }
 
     public String getName() {
         return name;

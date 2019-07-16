@@ -9,9 +9,6 @@ public class CompleteInvoice {
     private List<InvoiceWithItem> order;
 
 
-
-
-
     public int getInvoiceId() {
         return invoiceId;
     }

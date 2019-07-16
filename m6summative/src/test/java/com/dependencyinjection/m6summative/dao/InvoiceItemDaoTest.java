@@ -60,8 +60,6 @@ public class InvoiceItemDaoTest {
                 .forEach(item -> itemDao.deleteItem(item.getItemId()));
 
 
-
-
     }
 
 
@@ -123,7 +121,7 @@ public class InvoiceItemDaoTest {
     }
 
     @Test
-    public void updateInvoiceItem() throws ParseException{
+    public void updateInvoiceItem() throws ParseException {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
         Customer customer = new Customer();

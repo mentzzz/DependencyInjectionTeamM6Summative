@@ -15,36 +15,36 @@ public class CustomerController {
     @Autowired
     private ServiceLayer service;
 
-    @RequestMapping(value="/customer", method = RequestMethod.POST)
+    @RequestMapping(value = "/customer", method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.CREATED)
     public Customer createCustomer(@RequestBody Customer customer) {
         return service.saveCustomer(customer);
     }
 
-    @RequestMapping(value="/customer/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/customer/{id}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
-    public Customer getCustomerById(@PathVariable(name="id") int id ) {
+    public Customer getCustomerById(@PathVariable(name = "id") int id) {
         return service.findCustomer(id);
     }
 
-    @RequestMapping(value="/customers", method = RequestMethod.GET)
+    @RequestMapping(value = "/customers", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public List<Customer> getAllCustomers() {
         return service.findAllCustomers();
     }
 
-    @RequestMapping(value="/customer/{id}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/customer/{id}", method = RequestMethod.PUT)
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void updateCustomer(@RequestBody Customer customer, @PathVariable(name = "id") int id ) {
+    public void updateCustomer(@RequestBody Customer customer, @PathVariable(name = "id") int id) {
         if (id != customer.getCustomerId()) {
             throw new IllegalArgumentException("Customer ID on path must match the ID in the Customer object.");
         }
         service.updateCustomer(customer);
     }
 
-    @RequestMapping(value="/customer/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/customer/{id}", method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteCustomer(@PathVariable(name="id") int id ) {
+    public void deleteCustomer(@PathVariable(name = "id") int id) {
         service.removeCustomer(id);
     }
 

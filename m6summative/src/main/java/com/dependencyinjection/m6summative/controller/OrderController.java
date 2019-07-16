@@ -15,23 +15,23 @@ public class OrderController {
     private ServiceLayer service;
 
     // Create a new order
-    @RequestMapping(value="/order", method = RequestMethod.POST)
+    @RequestMapping(value = "/order", method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.CREATED)
     public RequestInvoice createOrder(@RequestBody RequestInvoice requestInvoice) {
         return service.saveOrder(requestInvoice);
     }
 
     // find an order by customer id
-    @RequestMapping(value="/order/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/order/{id}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
-    public TotalInvoiceViewModel findOrderByCustomerId( @PathVariable(name="id") int id ) {
+    public TotalInvoiceViewModel findOrderByCustomerId(@PathVariable(name = "id") int id) {
         return service.getOrderByCustomerId(id);
     }
 
     // delete an order by id
-    @RequestMapping(value="/order/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/order/{id}", method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteOrder( @PathVariable(name="id") int id ) {
+    public void deleteOrder(@PathVariable(name = "id") int id) {
         service.removeOrder(id);
     }
 
