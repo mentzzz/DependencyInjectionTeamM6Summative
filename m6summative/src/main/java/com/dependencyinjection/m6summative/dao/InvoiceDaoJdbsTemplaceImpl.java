@@ -88,7 +88,8 @@ public class InvoiceDaoJdbsTemplaceImpl implements InvoiceDao{
                 invoice.getOrderDate(),
                 invoice.getPickupDate(),
                 invoice.getReturnDate(),
-                invoice.getLateFee() );
+                invoice.getLateFee(),
+                invoice.getInvoiceId());
     }
 
     @Override
