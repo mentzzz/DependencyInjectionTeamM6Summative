@@ -323,16 +323,8 @@ public class ServiceLayerTest {
         customer.setCompany("ezShop");
         customer.setPhone("7048887777");
 
-        Customer customer2 = new Customer();
-        customer2.setFirstName("brian");
-        customer2.setLastName("smith");
-        customer2.setEmail("brian@mail");
-        customer2.setCompany("ezShop");
-        customer2.setPhone("7048887777");
-
         Customer updatedCustomer = new Customer();
-        updatedCustomer.setCustomerId(1);
-        updatedCustomer.setFirstName("jordan");
+        updatedCustomer.setFirstName("brian");
         updatedCustomer.setLastName("smith");
         updatedCustomer.setEmail("brian@mail");
         updatedCustomer.setCompany("ezShop");
@@ -342,7 +334,7 @@ public class ServiceLayerTest {
         List<Customer> cList = new ArrayList<>();
         cList.add(customer);
 
-        doReturn(customer).when(customerDao).addCustomer(customer2);
+        doReturn(customer).when(customerDao).addCustomer(updatedCustomer);
         doReturn(customer).when(customerDao).getCustomer(1);
         doReturn(cList).when(customerDao).getAllCustomers();
         doNothing().when(customerDao).updateCustomer(Mockito.any(Customer.class));
@@ -351,11 +343,10 @@ public class ServiceLayerTest {
     }
 
     private void setUpInvoiceMock() throws ParseException {
+        invoiceDao = mock(InvoiceDaoJdbsTemplaceImpl.class);
         java.util.Date orderDate = sdf.parse("2019-07-26");
         java.util.Date pickUpDate = sdf.parse("2019-07-27");
         java.util.Date returnDate = sdf.parse("2019-07-28");
-
-        invoiceDao = mock(InvoiceDaoJdbsTemplaceImpl.class);
 
         Invoice invoice = new Invoice();
         invoice.setInvoiceId(1);
@@ -382,7 +373,7 @@ public class ServiceLayerTest {
     }
 
     private void setUpInvoiceItemMock() {
-
+        invoiceItemDao = mock(InvoiceItemDao.class);
         InvoiceItem invoiceItem = new InvoiceItem();
         invoiceItem.setInvoiceItemId(1);
         invoiceItem.setInvoiceId(1);
@@ -408,7 +399,7 @@ public class ServiceLayerTest {
     }
 
     private void setUpItemMock() {
-
+        itemDao = mock(ItemDao.class);
         Item item = new Item();
         item.setItemId(1);
         item.setName("drill");
@@ -420,11 +411,11 @@ public class ServiceLayerTest {
         item2.setDescription("super powerful drill");
         item2.setDailyRate(4.00);
 
-//        Item updatedItem = new Item();
-//        updatedItem.setItemId(1);
-//        updatedItem.setName("hammer");
-//        updatedItem.setDescription("super powerful drill");
-//        updatedItem.setDailyRate(4.00);
+        Item updatedItem = new Item();
+        updatedItem.setItemId(1);
+        updatedItem.setName("hammer");
+        updatedItem.setDescription("super powerful drill");
+        updatedItem.setDailyRate(4.00);
 
         List<Item> itemList = new ArrayList<>();
         itemList.add(item);
@@ -432,7 +423,7 @@ public class ServiceLayerTest {
         doReturn(item).when(itemDao).addItem(item2);
         doReturn(item).when(itemDao).getItem(1);
         doReturn(itemList).when(itemDao).getAllItems();
-//        doNothing().when(itemDao).updateItem(updatedItem);
+        doNothing().when(itemDao).updateItem(updatedItem);
         doNothing().when(itemDao).deleteItem(Mockito.any());
     }
 
