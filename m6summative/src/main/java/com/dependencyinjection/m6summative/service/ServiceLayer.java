@@ -97,6 +97,12 @@ public class ServiceLayer {
         // find invoice by customer id
         List<Invoice> allInvoiceList = invoiceDao.findInvoicesByCustomer( id );
 
+        // if this is 0 then there are no invoices
+
+        if (allInvoiceList.size() == 0 ) {
+            return tivm;
+        }
+
         // this object hold the entire order for each invoice
         CompleteInvoice completeInvoice = new CompleteInvoice();
 
