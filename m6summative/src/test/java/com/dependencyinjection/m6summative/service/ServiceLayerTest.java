@@ -124,7 +124,7 @@ public class ServiceLayerTest {
         List<InvoiceItem> invoiceItemList = new ArrayList<>();
         invoiceItemList.add(invoiceItem);
 
-        ri.setInvoice(invoice);
+        ri.setItems(invoiceItemList);
         ri.setInvoice((Invoice) invoiceItemList);
         // ----- RequestInvoice object is created above
 
@@ -271,24 +271,6 @@ public class ServiceLayerTest {
 
     }
 
-    @Test
-    public void saveUpdateFindCustomer() {
-
-        Customer customer = new Customer();
-        customer.setFirstName("brian");
-        customer.setLastName("smith");
-        customer.setEmail("brian@mail");
-        customer.setCompany("ezShop");
-        customer.setPhone("7048887777");
-
-        customer = service.saveCustomer(customer);
-
-        // update
-        customer.setFirstName("jordan");
-
-        //       Customer updatedCustomer = service.updateCustomer(customer);
-    }
-
 
     @Test
     public void saveFindFindAllItem() {
@@ -337,9 +319,6 @@ public class ServiceLayerTest {
         doReturn(customer).when(customerDao).addCustomer(updatedCustomer);
         doReturn(customer).when(customerDao).getCustomer(1);
         doReturn(cList).when(customerDao).getAllCustomers();
-        doNothing().when(customerDao).updateCustomer(Mockito.any(Customer.class));
-        // add a delete here
-        doNothing().when(customerDao).deleteCustomer(1);
     }
 
     private void setUpInvoiceMock() throws ParseException {
@@ -423,8 +402,6 @@ public class ServiceLayerTest {
         doReturn(item).when(itemDao).addItem(item2);
         doReturn(item).when(itemDao).getItem(1);
         doReturn(itemList).when(itemDao).getAllItems();
-        doNothing().when(itemDao).updateItem(updatedItem);
-        doNothing().when(itemDao).deleteItem(Mockito.any());
     }
 
 
