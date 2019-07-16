@@ -28,7 +28,7 @@ public class InvoiceItemDaoJdbsTemplateImpl implements InvoiceItemDao {
             "delete from invoice_item where invoice_item_id = ?";
 
     private static final String UPDATE_INVOICE_ITEM_SQL =
-            "update invoice set invoice_id = ?, item_id, quantity = ?, unit_rate = ?, discount = ? where invoice_item_id = ?";
+            "update invoice_item set invoice_id = ?, item_id = ?, quantity = ?, unit_rate = ?, discount = ? where invoice_item_id = ?";
 
     private static final String FIND_INVOICE_ITEM_BY_INVOICE_ID =
             "select * from invoice_item where invoice_id = ?";
