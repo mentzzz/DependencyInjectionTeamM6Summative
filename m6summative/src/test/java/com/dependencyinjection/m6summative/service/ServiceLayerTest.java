@@ -46,7 +46,7 @@ public class ServiceLayerTest {
 
 
     // ServiceLayer Tests
-    @Test
+@Test
     public void saveFindOrder() throws Exception {
 
         // create a few date variables
@@ -84,6 +84,7 @@ public class ServiceLayerTest {
         ri = service.saveOrder(ri);
 
         assertEquals(1, ri.getInvoice().getInvoiceId());
+
 
 
     }
@@ -140,7 +141,7 @@ public class ServiceLayerTest {
         // create a new TotalInvoiceViewModel object to populate using the serviceLayer
         TotalInvoiceViewModel fromServiceTivm = service.getOrderByCustomerId(customerId);
 
-        // TotalInvoiceViewModel getone = fromServiceTivm;
+       // TotalInvoiceViewModel getone = fromServiceTivm;
 
         // dont compare object to object since they are composite objects
 
@@ -148,8 +149,7 @@ public class ServiceLayerTest {
 
 
     }
-
-    //
+//
     @Test
     public void removeOrder() throws Exception {
 
@@ -333,6 +333,7 @@ public class ServiceLayerTest {
         doReturn(itemList).when(itemDao).getAllItems();
 
     }
+
 
 
 }
