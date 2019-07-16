@@ -1,5 +1,6 @@
 package com.dependencyinjection.m6summative.dao;
 
+import com.dependencyinjection.m6summative.dto.Invoice;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -30,7 +31,9 @@ public class InvoiceItemDaoTest {
 
 
     @Test
-    public void addGetDeleteCustomer() {
+    public void addGetDeleteInvoiceItem() {
+        Invoice invoice = new Invoice();
+        invoice.setOrderDate();
 
     }
 
