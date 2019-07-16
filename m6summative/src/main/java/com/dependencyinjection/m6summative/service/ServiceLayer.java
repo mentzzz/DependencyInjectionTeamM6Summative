@@ -99,9 +99,9 @@ public class ServiceLayer {
 
         // if this is 0 then there are no invoices
 
-        if (allInvoiceList.size() == 0 ) {
-            return tivm;
-        }
+//        if (allInvoiceList.size() == 0 ) {
+//            return tivm;
+//        }
 
         // this object hold the entire order for each invoice
         CompleteInvoice completeInvoice = new CompleteInvoice();
@@ -141,7 +141,12 @@ public class ServiceLayer {
         }
 
             // add orders to the tivm
-        tivm.setInvoices((List<CompleteInvoice>) completeInvoice);
+        List<CompleteInvoice> tempCompleteInvoiceObject = new ArrayList<>();
+        tempCompleteInvoiceObject.add(completeInvoice);
+
+        tivm.setInvoices(tempCompleteInvoiceObject);
+
+    //    tivm.setInvoices((List<CompleteInvoice>) completeInvoice);
 
         return tivm;
     }
